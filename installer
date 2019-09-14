@@ -104,7 +104,7 @@ choose_dnscrypt_server () {
   echo -e "$INFO Choose DNS resolving load balancing strategy:"
   echo -e "  1) p2 (default)"
   echo -e "  2) ph"
-  echo -e "  3) fastest"
+  echo -e "  3) first"
   echo -e "  4) random"
   read_input_num "Select your mode" 1 4
   case $CHOSEN in
@@ -115,7 +115,7 @@ choose_dnscrypt_server () {
       toml_gvars_prep lb_strategy "\'ph\'"
       ;;
     3)
-      toml_gvars_prep lb_strategy "\'fastest\'"
+      toml_gvars_prep lb_strategy "\'first\'"
       ;;
     4)
       toml_gvars_prep lb_strategy "\'random\'"
